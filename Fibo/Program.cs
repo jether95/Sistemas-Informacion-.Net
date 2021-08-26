@@ -7,12 +7,12 @@ namespace Fibo
         static void Main(string[] args)
         {
             Console.WriteLine("cuantos numeros desea generar: ");
-            var tamaño = int.Parse(Console.ReadLine());
+            var size = int.Parse(Console.ReadLine());
             int fibonacci = 0;
             int iterador1 = 1;
             int iterador2;
 
-            for (int i = 0; i < tamaño; i++)
+            for (int i = 0; i < size; i++)
             {
                 iterador2 = fibonacci;
                 fibonacci = iterador1 + fibonacci;
@@ -20,26 +20,26 @@ namespace Fibo
                 Console.WriteLine(iterador1);
             }
 
-            Console.WriteLine(iterador1 + " es primo: " + esPrimo(iterador1));
+            Console.WriteLine(iterador1 + " es primo: " + primeNumber(iterador1));
         }
 
-        public static Boolean esPrimo(int numero){
-            if (numero <= 1)
+        public static Boolean primeNumber(int numberToEvaluate){
+            if (numberToEvaluate <= 1)
             {
                 return false;
             }
 
-            int contador = 0;
+            int count = 0;
 
-            for (int i = (int)Math.Sqrt(numero); i > 1; i--)
+            for (int i = (int)Math.Sqrt(numberToEvaluate); i > 1; i--)
             {
-                if (numero % i == 0)
+                if (numberToEvaluate % i == 0)
                 {
-                    contador++;
+                    count++;
                 }
             }
 
-            return contador < 1;
+            return count < 1;
         }
 
 
